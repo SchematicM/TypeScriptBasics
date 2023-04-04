@@ -38,44 +38,7 @@
 // }
 
 
-interface ILink {
-    article_link: string;
-    video_link: string;
-}
-
-interface ICore {
-    flight: number;
-    core: {
-        reuse_count: number;
-        status: unknown;
-    }
-}
-
-interface IRocket {
-    rocket_name: string;
-    first_stage: {
-        cores: ICore[];
-    }
-}
-
-interface IPayload {
-    payload_type: string;
-    payload_mass_kg: number;
-    payload_mass_lbs: number;
-}
-
-interface IMission {
-    mission_name: string;
-    launch_date_local: string;
-    launch_site: {
-        site_name_long: string;
-    },
-    links: ILink;
-    rocket: IRocket;
-    second_stage: {
-        payloads: IPayload[];
-    }
-}
+import {IMission} from "./Interfaces/mission.interface";
 
 const mission: IMission = {
     mission_name: 'Mission',
@@ -117,12 +80,8 @@ console.log(mission);
 // ---------------------------------------------------------------------------—————————
 // 2) протипізувати функції:
 //
-interface IUser{
-    name: string;
-    age:number;
-    gender:string
-}
 
+import {IUser} from './Interfaces/user.interface'
     const user:IUser = {
         name:'Max',
         age:18,
